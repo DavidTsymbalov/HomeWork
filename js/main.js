@@ -8,11 +8,10 @@
   const THEME_KEY = "cursor-theme";
   const THEME_COLORS = { light: "#f7f7f4", dark: "#14120b" };
 
-  function getTheme() {
-    return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  }
+  const getTheme = () =>
+    root.getAttribute("data-theme") === "dark" ? "dark" : "light";
 
-  function setTheme(theme) {
+  const setTheme = (theme) => {
     const next = theme === "dark" ? "dark" : "light";
     root.setAttribute("data-theme", next);
     try {
@@ -25,43 +24,39 @@
         next === "dark" ? "Включить светлую тему" : "Включить тёмную тему"
       );
     }
-  }
+  };
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      setTheme(getTheme() === "dark" ? "light" : "dark");
-    });
-  }
+  themeToggle?.addEventListener("click", () => {
+    setTheme(getTheme() === "dark" ? "light" : "dark");
+  });
   setTheme(getTheme());
 
-  function updateNav() {
+  const updateNav = () => {
     if (!nav) return;
     const y = window.scrollY;
-    nav.classList.toggle("is-scrolled", y > 12);
+    nav.classList.toggle("is-scrolled", y > 8);
     if (hero) {
-      const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
-      nav.classList.toggle("is-over-hero", y < heroBottom);
+      nav.classList.toggle("is-over-hero", y < hero.offsetTop + hero.offsetHeight - 72);
     }
-  }
+  };
   updateNav();
   window.addEventListener("scroll", updateNav, { passive: true });
 
-  const revealNodes = document.querySelectorAll(".reveal");
+  const nodes = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
         });
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
     );
-    revealNodes.forEach((el) => io.observe(el));
+    nodes.forEach((el) => io.observe(el));
   } else {
-    revealNodes.forEach((el) => el.classList.add("is-visible"));
+    nodes.forEach((el) => el.classList.add("is-visible"));
   }
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
