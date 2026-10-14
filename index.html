@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cursor — IDE с ИИ-агентом, который пишет, правит и запускает код вместе с вами." />
+  <meta name="theme-color" content="#e8edf2" />
+  <title>Cursor — IDE, которая думает вместе с вами</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0C10'/%3E%3Cpath d='M8 22 L16 8 L24 22' stroke='%233DDC97' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("cursor-theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Перейти к содержимому</a>
+
+  <header class="nav" id="nav" data-nav>
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Cursor — наверх">
+        <svg class="nav__mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 18 L12 4 L20 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.5 18 H15.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        Cursor
+      </a>
+
+      <nav aria-label="Основная навигация">
+        <ul class="nav__links">
+          <li><a href="#about">О продукте</a></li>
+          <li><a href="#features">Возможности</a></li>
+          <li><a href="#how">Как работает</a></li>
+          <li><a href="#for-whom">Для кого</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Переключить тему"
+          title="Сменить тему"
+        >
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 13.5A7.5 7.5 0 1 1 10.5 5 6 6 0 0 0 19 13.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a class="btn btn--primary nav__cta" href="https://cursor.com" target="_blank" rel="noopener noreferrer">
+          Скачать
+          <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-brand">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/images/hero-editor.svg" alt="" width="1600" height="900" />
+      </div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__brand" id="hero-brand">Cursor</p>
+        <h1 class="hero__title">IDE, которая думает вместе с вами</h1>
+        <p class="hero__text">
+          Редактор кода с встроенным ИИ-агентом: пишет, правит, объясняет
+          и запускает изменения прямо в вашем проекте.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">
+            Открыть Cursor
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#features">Смотреть возможности</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Листайте</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="section__kicker">О продукте</p>
+          <h2 class="section__title" id="about-title">Не чат рядом с кодом — а агент внутри IDE</h2>
+          <p class="section__lead">
+            Cursor построен на базе VS Code, поэтому привычные шорткаты, расширения
+            и рабочий процесс остаются на месте. Меняется только скорость.
+          </p>
+        </div>
+
+        <div class="about__grid">
+          <p class="about__statement reveal reveal-delay-1">
+            Вы формулируете намерение — Cursor читает репозиторий,
+            предлагает правки и <em>доводит задачу до результата</em>.
+          </p>
+          <div class="about__aside reveal reveal-delay-2">
+            <p>
+              Агент видит открытые файлы, терминал, линтер и историю диффов —
+              поэтому ответы опираются на реальный контекст проекта, а не на догадки.
+            </p>
+            <p>
+              Подходит для новых фич, рефакторинга, багфиксов и разбора чужого кода.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="section__kicker">Возможности</p>
+          <h2 class="section__title" id="features-title">Инструменты, которые ускоряют каждый коммит</h2>
+          <p class="section__lead">
+            От точечных правок до многофайловых изменений — без переключения
+            между редактором и отдельным чатом.
+          </p>
+        </div>
+
+        <ul class="features__list">
+          <li class="feature reveal">
+            <span class="feature__index">01 / Tab</span>
+            <div class="feature__body">
+              <h3 class="feature__title">Умное автодополнение</h3>
+              <p class="feature__text">
+                Cursor предлагает целые блоки кода по контексту файла и соседних модулей.
+                Принимаете — Tab. Отклоняете — продолжаете как обычно.
+              </p>
+            </div>
+            <figure class="feature__visual">
+              <img src="assets/images/feature-compose.svg" alt="Предложение правки кода с подсветкой diff" width="640" height="400" loading="lazy" />
+            </figure>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__index">02 / Agent</span>
+            <div class="feature__body">
+              <h3 class="feature__title">Агент по всему проекту</h3>
+              <p class="feature__text">
+                Опишите задачу на естественном языке: агент найдёт нужные файлы,
+                внесёт правки, предложит тесты и покажет аккуратный diff.
+              </p>
+            </div>
+            <figure class="feature__visual">
+              <img src="assets/images/flow-agent.svg" alt="Три шага работы агента: запрос, контекст, действие" width="960" height="320" loading="lazy" />
+            </figure>
+          </li>
+
+          <li class="feature reveal">
+            <span class="feature__index">03 / Inline</span>
+            <div class="feature__body">
+              <h3 class="feature__title">Правки прямо в коде</h3>
+              <p class="feature__text">
+                Выделите фрагмент, опишите, что изменить — и получите патч на месте.
+                Без копирования в сторонний сервис и потери контекста.
+              </p>
+            </div>
+            <figure class="feature__visual">
+              <img src="assets/images/feature-inline.svg" alt="Инлайн-правка выделенного фрагмента кода" width="640" height="400" loading="lazy" />
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section flow" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="section__kicker">Как работает</p>
+          <h2 class="section__title" id="how-title">Три шага от идеи до рабочего кода</h2>
+          <p class="section__lead">
+            Цикл короткий: запрос → понимание контекста → действие в репозитории.
+          </p>
+        </div>
+
+        <figure class="flow__figure reveal">
+          <img src="assets/images/flow-agent.svg" alt="Схема: запрос, контекст, действие" width="960" height="320" loading="lazy" />
+        </figure>
+        <p class="flow__note reveal reveal-delay-1">
+          request → context → patch → verify
+        </p>
+      </div>
+    </section>
+
+    <section class="section audience" id="for-whom" aria-labelledby="audience-title">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="section__kicker">Для кого</p>
+          <h2 class="section__title" id="audience-title">Кому Cursor даёт максимум</h2>
+          <p class="section__lead">
+            Один редактор — разные роли. Общее одно: меньше рутины, больше фокуса на решении.
+          </p>
+        </div>
+
+        <div class="audience__row">
+          <article class="audience__item reveal">
+            <h3>Разработчикам</h3>
+            <p>Быстрее прототипы, рефакторинг и разбор незнакомых модулей без потери контроля над кодом.</p>
+          </article>
+          <article class="audience__item reveal reveal-delay-1">
+            <h3>Командам</h3>
+            <p>Единый стиль правок, меньше контекст-свитчинга и понятные диффы на ревью.</p>
+          </article>
+          <article class="audience__item reveal reveal-delay-2">
+            <h3>Тем, кто учится</h3>
+            <p>Объяснения «почему так», подсказки по API и безопасные эксперименты в песочнице проекта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="download" aria-labelledby="cta-title">
+      <div class="cta-band__inner">
+        <div class="reveal">
+          <h2 class="cta-band__title" id="cta-title">Начните писать быстрее сегодня</h2>
+          <p class="cta-band__text">
+            Установите Cursor, откройте свой репозиторий и дайте агенту первую задачу.
+            Сайт полностью статический — его можно захостить на любом хостинге.
+          </p>
+        </div>
+        <div class="cta-band__actions reveal reveal-delay-1">
+          <a class="btn btn--primary" href="https://cursor.com" target="_blank" rel="noopener noreferrer">
+            Перейти на cursor.com
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#top">Наверх</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">Cursor</div>
+      <p class="footer__meta">
+        Неофициальный лендинг-демо ·
+        <a href="https://cursor.com" target="_blank" rel="noopener noreferrer">Официальный сайт</a>
+        · Статика HTML/CSS/JS
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

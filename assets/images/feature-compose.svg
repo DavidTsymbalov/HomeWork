@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none" role="img" aria-labelledby="featCompose">
+  <title id="featCompose"> 540:B8@>20=85 :>40 A </title>
+  <rect width="640" height="400" fill="#0A0C10"/>
+  <rect x="48" y="48" width="544" height="304" rx="8" fill="#12161E" stroke="#2A3342"/>
+  <rect x="48" y="48" width="544" height="36" fill="#0E1218"/>
+  <circle cx="72" cy="66" r="5" fill="#FF5F57"/>
+  <circle cx="90" cy="66" r="5" fill="#FEBC2E"/>
+  <circle cx="108" cy="66" r="5" fill="#28C840"/>
+
+  <!-- Diff lines -->
+  <rect x="72" y="112" width="420" height="22" rx="2" fill="#1A1214"/>
+  <text x="84" y="128" fill="#E85D6A" font-family="IBM Plex Mono, monospace" font-size="13">- const reply = await fetch(url)</text>
+
+  <rect x="72" y="144" width="480" height="22" rx="2" fill="#12201A"/>
+  <text x="84" y="160" fill="#3DDC97" font-family="IBM Plex Mono, monospace" font-size="13">+ const reply = await fetch(url, { signal })</text>
+
+  <rect x="72" y="184" width="360" height="22" rx="2" fill="#161C26"/>
+  <text x="84" y="200" fill="#A8B2C1" font-family="IBM Plex Mono, monospace" font-size="13">  if (!reply.ok) throw err</text>
+
+  <rect x="72" y="216" width="400" height="22" rx="2" fill="#12201A"/>
+  <text x="84" y="232" fill="#3DDC97" font-family="IBM Plex Mono, monospace" font-size="13">+ return await reply.json()</text>
+
+  <text x="72" y="300" fill="#8B95A5" font-family="IBM Plex Sans, sans-serif" font-size="14">Tab · ?@8=OBL ?@54;>65=85</text>
+  <rect x="520" y="280" width="48" height="28" rx="4" fill="#3DDC97"/>
+  <text x="544" y="299" text-anchor="middle" fill="#0A0C10" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600">Tab</text>
+</svg>
