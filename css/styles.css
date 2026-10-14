@@ -281,25 +281,29 @@ button {
 .nav__brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  min-height: 28px;
+  gap: 0.7rem;
+  min-height: 36px;
   color: var(--ink);
 }
 .nav__mark {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  flex: 0 0 auto;
+  object-position: center;
+  flex: 0 0 30px;
+  display: block;
   /* white PNG → чёрный на светлом фоне */
   filter: brightness(0);
 }
 .nav__wordmark {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-family: "Newsreader", "Times New Roman", Times, serif;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1;
   color: currentColor;
+  display: block;
+  padding-top: 0.06em; /* оптическое выравнивание с иконкой */
 }
 
 [data-theme="dark"] .nav__brand { color: #edecec; }
@@ -437,7 +441,7 @@ button {
 }
 .hero__brand-name {
   display: inline-block;
-  font-family: var(--font-display);
+  font-family: "Newsreader", "Times New Roman", Times, serif;
   font-size: clamp(2.75rem, 6.5vw, 4.5rem);
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -784,13 +788,14 @@ button {
   color: var(--text);
 }
 .footer__brand .nav__mark {
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
   filter: brightness(0);
 }
 [data-theme="dark"] .footer__brand { color: #edecec; }
 [data-theme="dark"] .footer__brand .nav__mark { filter: none; }
-.footer__brand .nav__wordmark { font-size: 1.15rem; font-weight: 500; }
+.footer__brand .nav__wordmark { font-size: 1.35rem; font-weight: 500; }
 
 .footer__note {
   margin: 0;

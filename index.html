@@ -10,9 +10,34 @@
   <title>Forma · AI Coding Agent</title>
   <link rel="icon" href="assets/brand/forma-favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/brand/forma-icon-192.png" />
+  <link rel="preload" href="assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/newsreader-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* страховка: бренд-шрифт даже если внешний CSS закэширован */
+    @font-face {
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("assets/fonts/newsreader-latin-400-normal.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Newsreader";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url("assets/fonts/newsreader-latin-500-normal.woff2") format("woff2");
+    }
+    .nav__wordmark,
+    .hero__brand-name,
+    .footer__brand .nav__wordmark {
+      font-family: "Newsreader", "Times New Roman", Times, serif !important;
+      font-weight: 500;
+      font-style: normal;
+    }
+  </style>
   <script>
     (function () {
       try {
@@ -29,7 +54,7 @@
   <header class="nav is-over-hero" data-nav>
     <div class="nav__inner">
       <a class="nav__brand" href="#top" aria-label="Forma">
-        <img class="nav__mark" src="assets/brand/forma-mark-white.png" alt="" width="28" height="28" />
+        <img class="nav__mark" src="assets/brand/forma-mark.png" alt="" width="30" height="30" />
         <span class="nav__wordmark">Forma</span>
       </a>
 
@@ -292,7 +317,7 @@
   <footer class="footer">
     <div class="footer__inner">
       <a class="footer__brand" href="#top" aria-label="Forma">
-        <img class="nav__mark" src="assets/brand/forma-mark-white.png" alt="" width="22" height="22" />
+        <img class="nav__mark" src="assets/brand/forma-mark.png" alt="" width="26" height="26" />
         <span class="nav__wordmark">Forma</span>
       </a>
       <p class="footer__note">
