@@ -3,12 +3,10 @@
   const nav = document.querySelector("[data-nav]");
   const themeToggle = document.querySelector("[data-theme-toggle]");
   const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const hero = document.querySelector(".hero");
 
   const THEME_KEY = "cursor-theme";
-  const THEME_COLORS = {
-    light: "#e8edf2",
-    dark: "#0a0c10",
-  };
+  const THEME_COLORS = { light: "#f7f7f4", dark: "#14120b" };
 
   function getTheme() {
     return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
@@ -34,18 +32,20 @@
       setTheme(getTheme() === "dark" ? "light" : "dark");
     });
   }
-
   setTheme(getTheme());
 
-  // Nav border on scroll
-  const onScroll = () => {
+  function updateNav() {
     if (!nav) return;
-    nav.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+    const y = window.scrollY;
+    nav.classList.toggle("is-scrolled", y > 12);
+    if (hero) {
+      const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
+      nav.classList.toggle("is-over-hero", y < heroBottom);
+    }
+  }
+  updateNav();
+  window.addEventListener("scroll", updateNav, { passive: true });
 
-  // Reveal on scroll
   const revealNodes = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -64,7 +64,6 @@
     revealNodes.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // Smooth focus for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const id = link.getAttribute("href");
