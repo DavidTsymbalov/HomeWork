@@ -6,7 +6,7 @@
 :root {
   --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-display: "Newsreader", "Times New Roman", Times, serif;
 
   --orange: #f54e00;
   --orange-press: #d04200;
