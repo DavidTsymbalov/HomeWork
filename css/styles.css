@@ -405,46 +405,6 @@ button {
   to { transform: translate3d(1.5%, -1%, 0) scale(1.05); opacity: 1; }
 }
 
-/* Glass play button — the effect from the reference image */
-.hero__play {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  z-index: 2;
-  translate: -50% -50%;
-  width: clamp(72px, 9vw, 96px);
-  height: clamp(72px, 9vw, 96px);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  box-shadow: 0 8px 32px rgba(20, 18, 11, 0.18);
-  color: rgba(237, 236, 236, 0.92);
-  transition: transform 0.35s var(--ease-out), background 0.25s, border-color 0.25s;
-  animation: playFloat 4.5s ease-in-out infinite;
-}
-.hero__play:hover {
-  transform: scale(1.06);
-  background: rgba(255, 255, 255, 0.26);
-  border-color: rgba(255, 255, 255, 0.65);
-}
-.hero__play:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
-}
-.hero__play svg {
-  width: 28%;
-  height: 28%;
-  margin-left: 6%;
-}
-@keyframes playFloat {
-  0%, 100% { translate: -50% calc(-50% + 0px); }
-  50% { translate: -50% calc(-50% - 6px); }
-}
-
 .hero__content {
   position: relative;
   z-index: 3;
@@ -750,5 +710,5 @@ button {
   }
   .reveal { opacity: 1; transform: none; }
   .hero__brand-mark, .hero__title, .hero__text, .hero__cta { opacity: 1; animation: none; }
-  .hero__media img, .hero__bloom, .hero__play { animation: none; }
+  .hero__media img, .hero__bloom { animation: none; }
 }
