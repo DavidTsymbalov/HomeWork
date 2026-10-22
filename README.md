@@ -1,14 +1,15 @@
-# Cursor — одностраничный лендинг
+# Forma — одностраничный лендинг
 
-Статический сайт на HTML / CSS / JS в официальном визуальном языке Cursor.
+Статический сайт на HTML / CSS / JS. Учебный проект **David Tsymbalov**.
 
-## Бренд
+## Рабочая ссылка (GitHub Pages)
 
-- Палитра: canvas `#F7F7F4`, ink `#26251E`, dark `#14120B`, accent Cursor Orange `#F54E00`
-- Логотипы и иконки: [cursor.com/brand](https://cursor.com/brand)
-- Ландшафты: официальные wallpaper / brand images с cursor.com + эффект grain + glass play
+**https://davidtsymbalov.github.io/HomeWork/**
 
-## Запуск
+> Важно: нужен именно путь `/HomeWork/` — у project site корень `davidtsymbalov.github.io` без репозитория отдаёт 404.  
+> Старый адрес после переименования аккаунта (`davidtsymbalov178-crypto.github.io/...`) тоже не работает.
+
+## Локальный запуск
 
 ```bash
 python3 -m http.server 8080
@@ -18,5 +19,5 @@ python3 -m http.server 8080
 
 ## Хостинг
 
-Полностью статический сайт — можно залить на любой хостинг (GitHub Pages, Timeweb, Beget и т.д.).
-Шрифты локальные, картинки локальные — открывается из России без Google CDN.
+Сайт полностью статический. Деплой: GitHub Pages из ветки `main` (корень репозитория).  
+В репозитории есть `.nojekyll`, чтобы Pages не обрабатывал файлы через Jekyll.
